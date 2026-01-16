@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "PixelChicago";
+    src: url("../font/Chicago-12.BYDh-c1X.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+body {
+    background-color: rgb(64, 0, 124);
+    font-family: "PixelChicago", monospace;
+    padding: 0%;
+    margin: 0%;
+}
+
+.Header {
+    width: 100%;
+    background: #2b1d33;
+    border-bottom: 3px solid #b47cff;
+}
+
+.Navegador {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 12px 24px;
+    color: white;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+    
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-logo {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.logo {
+    font-size: 20px;
+}
+
+h1 {
+       grid-column: 2;          /* esto lo hace estar en una columna central */
+    justify-self: center;    /* en esta centra horizontalmente */
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: white;
+
+}
+
+.nav-derecha {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-derecha img {
+    width: 24px;
+    height: 24px;
+    image-rendering: pixelated;
+   
+}
+
