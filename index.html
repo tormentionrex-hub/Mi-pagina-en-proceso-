@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimu's Underground</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body class="crt-monitor">
+    <div class="monitor-screen">
+        <div class="scanlines"></div>
+        <div class="flicker"></div>
+
+        <header class="top-nav">
+            <div class="nav-left">
+                <div class="logo-box">
+                    <img src="src/assets/unnamed (1).png" alt="Kimu" class="nav-avatar">
+                    <span class="nav-name">Kimu</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="social-icons">
+                    <img src="src/assets/glitch-cat (1).gif" alt="User" class="nav-social-img">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-discord"></i>
+                </div>
+                <div class="lang-selector">es <i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <h1 class="pixel-title">Kimu's Underground</h1>
+
+            <div class="diamond-divider">
+                <span class="line"></span>
+                <span class="diamond"></span>
+                <span class="line"></span>
+            </div>
+
+            <section class="status-section">
+                <div class="avatar-pixel-box">
+                    <img src="https://underground.kimu.moe/assets/images/kimu_avatar.png" alt="Avatar"
+                        class="avatar-img">
+                </div>
+                <div class="carousel-box">
+                    <div class="carousel-content">
+                        <span class="carousel-title">Kimu</span>
+                        <p id="carousel-text" class="carousel-msg">¡Bienvenidx a mi casita! =w=</p>
+                    </div>
+                    <div class="carousel-arrows">
+                        <span class="arrow"><i class="fa-solid fa-chevron-up"></i></span>
+                    </div>
+                </div>
+                <div class="stats-indicators">
+                    <div class="stat-row">
+                        <div class="diamonds"><span>◇</span><span>◇</span><span>◇</span></div>
+                        <span class="stat-label">L1</span>
+                    </div>
+                    <div class="stat-row">
+                        <div class="diamonds"><span>◇</span><span>◇</span><span>◇</span></div>
+                        <span class="stat-label">L2</span>
+                    </div>
+                    <div class="stat-row">
+                        <div class="diamonds"><span>◇</span><span>◇</span><span>◇</span></div>
+                        <span class="stat-label">L3</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="editor-status-bar">
+                <span class="file-path">index.md</span>
+                <div class="file-coords">
+                    <span>1,1</span>
+                    <span class="all-info">All</span>
+                </div>
+            </div>
+
+            <div class="classic-grid" id="main-grid">
+                <!-- Grid items will be injected by JS -->
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+</body>
+
+</html>
