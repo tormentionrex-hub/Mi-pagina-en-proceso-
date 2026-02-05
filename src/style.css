@@ -30,23 +30,44 @@ body {
 .crt-monitor {
     min-height: 100vh;
     width: 100vw;
-    background: var(--color-bg);
+    background: #000;
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 8px;
+    /* Slimmer outer Frame padding */
 }
 
 .monitor-screen {
     width: 100%;
-    max-width: 1000px;
-    height: 100vh;
+    /* max-width removed to allow 100% width */
+    height: calc(100vh - 30px);
     background: var(--color-bg);
     position: relative;
-    overflow-y: auto;
+    overflow: hidden;
+    /* No scroll! */
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+    padding: 1.5rem 2.5rem;
+    /* Slightly more compact padding */
+
+    /* OLD TV BEZEL EFFECT - RETRO WHITE (SILMMER) */
+    border: 8px solid #e6e2d3;
+    /* Thinner Bone / Retro White frame */
+    border-bottom-width: 15px;
+    /* Thinner bottom */
+    border-radius: 25px;
+    /* Smoother rounded corners */
+    box-shadow:
+        inset 0 0 100px rgba(0, 0, 0, 0.9),
+        /* Internal screen recessed shadow */
+        0 5px 20px rgba(0, 0, 0, 0.4),
+        /* Subtle external shadow */
+        inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+        /* Bezel highlight (top-left) */
+        inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+    /* Bezel depth (bottom-right) */
 
     /* Plus Sign Grid Background (matching image) */
     background-image:
@@ -76,8 +97,13 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--color-accent);
-    padding: 0.8rem 0;
-    margin-bottom: 2rem;
+    padding: 0.4rem 0;
+    /* More compact padding */
+    margin: 0 auto 1rem auto;
+    /* Centered with margin auto */
+    width: 100%;
+    max-width: 1000px;
+    /* Constrain width like image */
 }
 
 .logo-box {
@@ -136,8 +162,9 @@ body {
 
 .pixel-title {
     text-align: center;
-    font-size: 3.5rem;
-    margin: 2rem 0;
+    font-size: 2.5rem;
+    /* Smaller title to save space */
+    margin: 1rem 0;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -147,14 +174,15 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+    /* Compact margin */
 }
 
 .diamond-divider .line {
     height: 1px;
     flex: 1;
     background: var(--color-dim);
-    max-width: 15rem;
+    /* max-width removed to allow lines to expand in full screen */
 }
 
 .diamond-divider .diamond {
@@ -169,8 +197,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    /* Compact margin */
     flex-wrap: wrap;
 }
 
@@ -182,15 +211,17 @@ body {
 }
 
 .avatar-img {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     image-rendering: pixelated;
 }
 
 .carousel-box {
     border: 2px dashed var(--color-accent);
-    padding: 1.2rem 2.5rem;
-    min-width: 350px;
+    padding: 0.8rem 1.5rem;
+    /* More compact padding */
+    min-width: 280px;
+    /* Smaller min-width */
     position: relative;
     background: rgba(0, 0, 0, 0.4);
 }
@@ -234,6 +265,17 @@ body {
     color: var(--color-fg);
 }
 
+.content-area {
+    width: 100%;
+    max-width: 1000px;
+    /* Constrain width like image */
+    margin: 0 auto;
+    /* Center content area */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .editor-status-bar {
     background: #fcfcfc;
     color: #130f14;
@@ -241,25 +283,34 @@ body {
     justify-content: space-between;
     padding: 4px 15px;
     font-weight: bold;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    margin: 0 auto 1rem auto;
+    /* More compact margin */
+    font-size: 0.9rem;
+    /* Slightly smaller text */
+    width: 100%;
 }
 
 .classic-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 120px);
-    gap: 1.2rem;
+    /* 3 columns like the image */
+    grid-auto-rows: 80px;
+    /* Thinner rows */
+    gap: 1rem;
+    /* Slightly smaller gap */
     position: relative;
-    padding-bottom: 4rem;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 .grid-item {
     border: 2px solid #fff;
-    padding: 1rem;
+    padding: 0.8rem;
+    /* Compact padding */
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    /* Compact gap */
     background: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     transition: all 0.1s;
@@ -274,9 +325,11 @@ body {
 }
 
 .grid-item .icon {
-    font-size: 2rem;
-    width: 48px;
-    height: 48px;
+    font-size: 1.5rem;
+    /* Smaller icon */
+    width: 36px;
+    /* Smaller container */
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -286,15 +339,16 @@ body {
 
 .grid-item .label {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    /* Smaller text */
 }
 
 .hamburger-btn {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 60px;
-    height: 60px;
+    bottom: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
     border: 2px solid #fff;
     background: var(--color-panel);
     display: flex;
@@ -305,8 +359,8 @@ body {
 }
 
 .hamburger-icon {
-    width: 25px;
-    height: 3px;
+    width: 20px;
+    height: 2px;
     background: #fff;
     position: relative;
 }
@@ -322,11 +376,11 @@ body {
 }
 
 .hamburger-icon::before {
-    top: -8px;
+    top: -6px;
 }
 
 .hamburger-icon::after {
-    top: 8px;
+    top: 6px;
 }
 
 @media (max-width: 900px) {
