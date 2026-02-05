@@ -31,7 +31,7 @@ body {
 }
 
 .navLeft {
-     display: flex;
+    display: flex;
     align-items: center;
     align-self: flex-end;
     margin-left: -10px;
@@ -44,9 +44,11 @@ body {
     text-decoration: none;
     color: white;
     position: relative;
-    top: 30px;    /* baja */
-    left: 70px;   /* mueve a la derecha */
-    
+    top: 30px;
+    /* baja */
+    left: 70px;
+    /* mueve a la derecha */
+
 }
 
 .nav-logo {
@@ -60,8 +62,10 @@ body {
 }
 
 span {
-       grid-column: 2;          /* esto lo hace estar en una columna central */
-    justify-self: center;    /* en esta centra horizontalmente */
+    grid-column: 2;
+    /* esto lo hace estar en una columna central */
+    justify-self: center;
+    /* en esta centra horizontalmente */
     text-align: center;
     font-size: 32px;
     letter-spacing: 2px;
@@ -72,20 +76,17 @@ span {
     display: flex;
     align-items: center;
     gap: 12px;
-    
+
 }
 
 .nav-derecha img {
-   width: 25px;
+    width: 25px;
     height: 25px;
     object-fit: contain;
-   
+
 }
 
 .nav-derecha .IconoGif {
     height: 33px !important;
     width: auto;
 }
-
-
-
