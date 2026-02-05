@@ -1,33 +1,25 @@
+import { translations } from './data/translations.js';
+
 const state = {
     lang: 'es',
     greetingIndex: 0
 };
 
-const translations = {
-    es: {
-        greetings: [
-            "¡Bienvenidx a mi casita! =w=",
-            "¡Mis lenguajes favoritos son C y Go!",
-            "Parezco un NPC con estos mensajes...",
-            "Nop no uso Wordpress, odio PHP.",
-            "Mi primer programa fue un bot de Discord en Python..."
-        ],
-        grid: [
-            { icon: '<i class="fa-solid fa-ghost"></i>', label: "Sobre Mi", id: "about" },
-            { icon: '<i class="fa-solid fa-folder-open"></i>', label: "Proyectos", id: "projects" },
-            { icon: '<i class="fa-solid fa-at"></i>', label: "Contacto", id: "contact" },
-            { icon: '<i class="fa-solid fa-coffee"></i>', label: "Donar :3", id: "donate" },
-            { icon: '<i class="fa-brands fa-discord"></i>', label: "Discord", id: "discord" },
-            { icon: '<i class="fa-brands fa-youtube"></i>', label: "Youtube", id: "youtube" }
-        ]
-    }
-};
-
 function renderGrid() {
     const grid = document.getElementById('main-grid');
     if (!grid) return;
-    const items = translations[state.lang].grid;
-    grid.innerHTML = items.map(item => `
+
+    const links = translations[state.lang].page.home.links;
+    const gridItems = [
+        { icon: '<i class="fa-solid fa-ghost"></i>', label: links.about, id: "about" },
+        { icon: '<i class="fa-solid fa-folder-open"></i>', label: links.projects, id: "projects" },
+        { icon: '<i class="fa-solid fa-at"></i>', label: links.contact, id: "contact" },
+        { icon: '<i class="fa-solid fa-coffee"></i>', label: links.donate, id: "donate" },
+        { icon: '<i class="fa-brands fa-discord"></i>', label: links["my-server"], id: "discord" },
+        { icon: '<i class="fa-brands fa-youtube"></i>', label: links.youtube, id: "youtube" }
+    ];
+
+    grid.innerHTML = gridItems.map(item => `
         <a href="#${item.id}" class="grid-item">
             <div class="icon">${item.icon}</div>
             <span class="label">${item.label}</span>
@@ -43,7 +35,7 @@ function rotateGreeting() {
     const textEl = document.getElementById('carousel-text');
     if (!textEl) return;
 
-    const greetings = translations[state.lang].greetings;
+    const greetings = translations[state.lang].page.home.greeting;
     state.greetingIndex = (state.greetingIndex + 1) % greetings.length;
 
     textEl.style.opacity = 0;
@@ -57,3 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGrid();
     setInterval(rotateGreeting, 3000);
 });
+
